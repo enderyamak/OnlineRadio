@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="0dp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    android:paddingTop="0dp"
+    tools:context="com.example.yamak.onlineradio.MainActivity"
+    android:orientation="vertical"
+    android:background="@mipmap/arkaplan"
+    android:layout_gravity="center">
+
+
+    <TextView
+        android:text="Online Radyo By ENDY"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:textColor="#ffffff"
+        android:textSize="30dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:id="@+id/linearLayout1"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Çal"
+            android:id="@+id/btnCal"
+            android:background="#ff2"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dur"
+            android:id="@+id/btnDur"
+            android:background="#ff22"
+            android:layout_marginLeft="80dp"/>
+
+
+    </LinearLayout>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sesKontrol"
+        android:background="#ffffff"
+        android:layout_marginTop="20dp"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/spn"
+        android:layout_marginTop="20dp"
+        android:background="@android:color/darker_gray"
+        android:popupBackground="@android:color/holo_blue_bright" />
+
+</LinearLayout>
