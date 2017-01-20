@@ -22,6 +22,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -35,6 +36,7 @@ import java.util.Map;
 public class MainActivity extends AppCompatActivity {
     String streamUrl=""; //bigfm
     private Button btnCal,btnDur;
+  //  private ImageButton image_button;
     private MediaPlayer mediaPlayer;
     public  static boolean isAlreadyPlaying=false;
     private AudioManager audioManager;
@@ -75,7 +77,29 @@ public class MainActivity extends AppCompatActivity {
 
         btnCal=(Button)findViewById(R.id.btnCal);
         btnDur=(Button)findViewById(R.id.btnDur);
+
         btnDur.setEnabled(false);
+
+
+         // image_button=(ImageButton)findViewById(R.id.imageButton);
+        /* image_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(isAlreadyPlaying){
+                    stopRadioPlayer();
+                    image_button.setImageResource(R.drawable.play);
+
+                }
+                else{
+                    playRadioPlayer();
+                    image_button.setImageResource(R.drawable.pause);
+                }
+                isAlreadyPlaying=!isAlreadyPlaying;
+
+            }
+        }); */
+
+
 
         btnCal.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
                 playRadioPlayer();
             }
         });
+
         btnDur.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,6 +152,7 @@ public class MainActivity extends AppCompatActivity {
             mediaPlayer.stop();
             mediaPlayer.release();
             initializeMediaPlayer();
+
         }
         btnCal.setEnabled(true);
         btnDur.setEnabled(false);
@@ -136,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
         btnDur.setEnabled(true);
         btnCal.setEnabled(false);
         initializeMediaPlayer();
+
         mediaPlayer.prepareAsync();
         mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
             @Override
@@ -192,6 +219,13 @@ public class MainActivity extends AppCompatActivity {
                 hmap.put("POWER AKUSTİK","http://195.142.3.50/power/PowerTurkAkustik_mpeg_128_home/icecast.audio?");
                 Toast.makeText(MainActivity.this,secilen,Toast.LENGTH_SHORT).show();
                 streamUrl=hmap.get(secilen);
+                stopRadioPlayer();
+                playRadioPlayer();
+
+
+
+
+
 
                // if (secilen.equals("RADYO FENOMEN"))
                  //streamUrl="http://sc.powergroup.com.tr/RadyoFenomen/mpeg/128/tunein";
